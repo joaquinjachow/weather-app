@@ -7,12 +7,10 @@ export default function Cards({cities, onClose}) {
   return (
     <>
       {cities.length > 0 ? (
-      <div className='flex flex-wrap justify-center'>
+      <div className='container flex flex-wrap justify-center gap-5 mx-auto mb-6 lg:mb-1'>
         {cities.map(c => <Card
-            id={c.id}
             key={c.id}
             temp={c.temp}
-            wind={c.wind}
             max={c.max}
             min={c.min}
             name={c.name}

@@ -5,8 +5,8 @@ import weatherImg from '../../../public/Weather-img.png'
 
 function Nav({onSearch}) {
   return (
-    <nav className="p-4 bg-black shadow-md bg-opacity-70">
-      <div className='flex items-center justify-around'>
+    <nav className="p-4 bg-[#565656] shadow-md">
+      <div className='flex flex-col items-center justify-around gap-3 lg:gap-0 lg:flex-row'>
         <div className='flex items-center'>
           <Image src={weatherImg} alt='Logo-Clima' width={80}/>
           <span className="text-3xl font-bold text-white">

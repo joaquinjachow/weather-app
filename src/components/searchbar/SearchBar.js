@@ -5,6 +5,7 @@ export default function SearchBar({onSearch}) {
   return (
     <form className="flex p-1 px-3 space-x-4 bg-white rounded-lg" onSubmit={(e) => {
       e.preventDefault();
+      setCity("");
       onSearch(city);
     }}>
       <div className="flex items-center space-x-2">

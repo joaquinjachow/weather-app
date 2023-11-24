@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Nav from '@/components/nav/Nav'
 import Cards from '@/components/cards/Cards'
+import Footer from '@/components/footer/footer';
 
 export default function Home() {
   const [cities, setCities] = useState([]);
@@ -37,9 +38,10 @@ export default function Home() {
       });
   }
   return (
-    <main>
+    <main className='min-h-screen bg-center bg-cover bg-clouds'>
       <Nav onSearch={onSearch}/>
       <Cards cities={cities} onClose={onClose}/>
+      <Footer/>
     </main>
   )
 }
