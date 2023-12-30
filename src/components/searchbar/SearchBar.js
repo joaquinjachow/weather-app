@@ -11,7 +11,7 @@ export default function SearchBar({onSearch}) {
       <div className="flex items-center space-x-2">
         <label>🔎</label>
         <input
-          className="px-4 py-1 font-normal no-underline bg-gray-100 rounded-lg outline-none"
+          className="px-4 py-1 font-normal no-underline bg-gray-100 rounded-lg outline-none w-28 md:w-auto"
           type="text"
           id="city"
           placeholder="Ciudad"
