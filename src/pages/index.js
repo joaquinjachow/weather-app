@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Nav from '@/components/nav/Nav'
 import Cards from '@/components/cards/Cards'
 import Footer from '@/components/footer/footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
   const [cities, setCities] = useState([]);
@@ -33,7 +35,12 @@ export default function Home() {
           };
           setCities(oldCities => [...oldCities, ciudad]);
         } else {
-          alert("Ciudad no encontrada");
+          toast.error('Ciudad no encontrada', {
+            position: 'top-right',
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+          });
         }
       });
   }
@@ -42,6 +49,7 @@ export default function Home() {
       <Nav onSearch={onSearch}/>
       <Cards cities={cities} onClose={onClose}/>
       <Footer/>
+      <ToastContainer />
     </main>
   )
 }
