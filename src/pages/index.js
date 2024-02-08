@@ -15,6 +15,7 @@ export default function Home() {
   const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 
   function onSearch(ciudad) {
+    try {
     //Llamado a la API del clima
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&appid=${apiKey}`)
       .then(r => r.json())
@@ -42,8 +43,27 @@ export default function Home() {
             closeOnClick: true,
           });
         }
+      })
+      .catch((error) => {
+        console.error('Error en la llamada a la API:', error);
+        toast.error('Error al obtener datos del clima', {
+          position: 'top-right',
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+        });
       });
-  }
+    } catch (error) {
+        console.error('Error general:', error);
+        toast.error('Error inesperado, intente nuevamente', {
+          position: 'top-right',
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+        });
+      }
+    }
+
   return (
     <main className='min-h-screen bg-center bg-cover bg-clouds'>
       <Nav onSearch={onSearch}/>
