@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage:{
+      backgroundImage: {
         clouds: 'url(/clouds.avif)'
       }
     }
