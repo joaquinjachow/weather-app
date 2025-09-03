@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
     <main className={`${poppins.className}`}>
       <Head>
         <title>Weather App</title>
-        <link rel='icon' href='/favicon.png'/>
+        <link rel='icon' href='/favicon.png' />
       </Head>
       <Component {...pageProps} />
     </main>
