@@ -10,18 +10,18 @@ const Card = memo(({ min, max, name, img, onClose, temp, wind, weather, clouds, 
   };
 
   return (
-    <div className={`card-expandable card-hover flex flex-col items-center justify-center w-full max-w-xs p-4 my-4 font-medium bg-white rounded-md shadow-lg shadow-slate-500 hover:scale-105 hover:shadow-xl ${isExpanded ? 'max-w-sm' : ''}`}>
+    <div className={`card-expandable card-hover flex flex-col items-center justify-center w-full max-w-xs p-4 my-4 font-medium bg-white dark:bg-dark-secondary rounded-md shadow-lg shadow-slate-500 dark:shadow-gray-800 hover:scale-105 hover:shadow-xl dark:hover:shadow-gray-700 transition-all duration-300 ${isExpanded ? 'max-w-sm' : ''}`}>
       <div className="flex items-center justify-between w-full mb-2">
-        <h2 className="text-lg font-semibold text-gray-800">{name}</h2>
+        <h2 className="text-lg font-semibold text-gray-800 dark:text-dark-text">{name}</h2>
         <button
           onClick={onClose}
-          className="text-2xl text-red-400 transition-colors duration-300 ease-in-out hover:text-red-600"
+          className="text-2xl text-red-400 dark:text-red-500 transition-colors duration-300 ease-in-out hover:text-red-600 dark:hover:text-red-400"
           aria-label={`Eliminar ${name}`}
         >
           ×
         </button>
       </div>
-      <div className="grid m-4 bg-gray-900 rounded-full shadow-lg place-items-center shadow-gray-300">
+      <div className="grid m-4 bg-gray-900 dark:bg-gray-700 rounded-full shadow-lg place-items-center shadow-gray-300 dark:shadow-gray-600">
         <Image
           src={`http://openweathermap.org/img/wn/${img}@2x.png`}
           width={100}
@@ -33,22 +33,22 @@ const Card = memo(({ min, max, name, img, onClose, temp, wind, weather, clouds, 
         />
       </div>
       <div className="mb-3 text-center">
-        <span className="text-4xl font-bold text-gray-800">{temp}°C</span>
-        <p className="text-sm text-gray-600 capitalize">{weather}</p>
+        <span className="text-4xl font-bold text-gray-800 dark:text-dark-text">{temp}°C</span>
+        <p className="text-sm text-gray-600 dark:text-dark-text-secondary capitalize">{weather}</p>
       </div>
       <div className="flex justify-center mb-3 space-x-4">
         <div className="text-center">
-          <span className="text-sm text-gray-500">Mín</span>
-          <p className="text-lg font-semibold text-blue-600">{min}°C</p>
+          <span className="text-sm text-gray-500 dark:text-dark-text-secondary">Mín</span>
+          <p className="text-lg font-semibold text-blue-600 dark:text-blue-400">{min}°C</p>
         </div>
         <div className="text-center">
-          <span className="text-sm text-gray-500">Máx</span>
-          <p className="text-lg font-semibold text-red-600">{max}°C</p>
+          <span className="text-sm text-gray-500 dark:text-dark-text-secondary">Máx</span>
+          <p className="text-lg font-semibold text-red-600 dark:text-red-400">{max}°C</p>
         </div>
       </div>
       <button
         onClick={toggleExpansion}
-        className="flex items-center px-4 py-2 space-x-2 text-sm text-blue-600 transition-all duration-300 rounded-lg expand-button hover:text-blue-800 hover:bg-blue-50"
+        className="flex items-center px-4 py-2 space-x-2 text-sm text-blue-600 dark:text-blue-400 transition-all duration-300 rounded-lg expand-button hover:text-blue-800 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-900/20"
         aria-label={isExpanded ? "Mostrar menos información" : "Mostrar más información"}
       >
         <span>{isExpanded ? "Mostrar menos" : "Más detalles"}</span>
