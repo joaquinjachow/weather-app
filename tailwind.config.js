@@ -5,10 +5,20 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
         clouds: 'url(/clouds.avif)'
+      },
+      colors: {
+        dark: {
+          primary: '#1f2937',
+          secondary: '#374151',
+          accent: '#4b5563',
+          text: '#f9fafb',
+          'text-secondary': '#d1d5db'
+        }
       }
     }
   },
